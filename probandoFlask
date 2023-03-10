@@ -3,12 +3,20 @@ from flask import Flask, render_template
 app = Flask(__name__) #"app" es una variable para guardar el objeto que devuelve Flask (para iniciar Flask). Para crear urls, puede ser app o cualq otro nombre.
 
 @app.route("/") #Ruta para la pag principal
-def home():
-    return render_template("home.html") #Devuelve la plantilla
+def index():
+    return ("Hola Mundo") 
+
+@app.route("/hola")
+def holaSpanish():
+    return "Hola perro"
+
+@app.route("/hello")
+def hello():
+    return "Ohayo"
 
 @app.route("/about") #Ruta para about
 def about():
-    return render_template("about.html")
+    return render_template("about.html") #Devuelve la plantilla/template 
 
 if __name__ == "__main__":
     app.run(debug=True) #Para no tener que reiniciar el servidor a cada rato, se pone debug=True(significa que es de prueba)
@@ -16,7 +24,7 @@ if __name__ == "__main__":
 
 #Para ejecutarlo: 
 #1- Abrir consola de W. Poner cdm
-#2- cd desktop (C:\Users\romin>cd desktop)
-#3- cd Python Website (C:\Users\romin\Desktop>cd Python Website)
-#4- python index.py (C:\Users\romin\Desktop\Python Website>python index.py)
+#2- cd <desktop> (C:\Users\romin>cd desktop)
+#3- cd <Python Website> (C:\Users\romin\Desktop>cd Python Website)
+#4- flask run o python <index.py> (C:\Users\romin\Desktop\Python Website>python index.py)
 
